@@ -1,14 +1,12 @@
 package id.ifundip.testing.suite;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.platform.suite.api.SelectClasses;
+import org.junit.platform.suite.api.Suite;
+import id.ifundip.*;
+import id.ifundip.calc.*;
 
-import org.junit.jupiter.api.Test;
-
-class TestSuiteIfUndipApp {
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+@Suite
+@SelectClasses({HelloTest.class, CalculatorTest.class})
+public class TestSuiteIfUndipApp {
 
 }
