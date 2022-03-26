@@ -5,6 +5,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -17,7 +19,7 @@ public class GreetingTesting {
 	private Time time;
 	
 	@BeforeEach
-	public void setUp() {
+	void setUp() {
 		time = mock(Time.class);
 		greeting = new GoodGreeting(time);
 	}
@@ -26,10 +28,10 @@ public class GreetingTesting {
 //		return $(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
 //	}
 
-	@Test
-	@ParameterizedTest
+	@DisplayName("Good Morning")
+	@ParameterizedTest(name = "{index} => morningHour={0}")
 	@ValueSource(ints = {0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11})
-	public void shouldSayGoodMorningInTheMorning(int morningHour) {
+	void GoodMorningTest(int morningHour) {
 		when(time.getTime()).thenReturn(getCalendar(morningHour));
 		assertEquals("Good Morning!", greeting.sayHello());
 	}
@@ -38,10 +40,10 @@ public class GreetingTesting {
 //		return $(12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23);
 //	}
 	
-	@Test
+	@DisplayName("Good Afternoon")
 	@ParameterizedTest
 	@ValueSource(ints = {12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23})
-	public void shouldSayGoodAfternoonInTheAfternoon(int afternoonHour) {
+	void GoodAfternoonTest(int afternoonHour) {
 		when(time.getTime()).thenReturn(getCalendar(afternoonHour));
 		assertEquals("Good Afternoon!", greeting.sayHello());
 	}
