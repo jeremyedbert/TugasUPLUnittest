@@ -6,7 +6,7 @@ Nama kelompok:
 2. Merry Tantri Millenia Tobing 	(24060119120013)
 3. Salma Safira Ramadhanti 		    (24060119140109)
 
-Di dalam unit test, kami mengecek *output* yang diberikan *(actual result)* sama seperti *expected value* yang diberikan pada *unit test* 
+Di dalam *unit test*, kami mengecek *output* yang diberikan *(actual result)* sama seperti *expected value* yang diberikan pada *unit test* 
 <br>*Input* yang diberikan yakni berupa jam (*integer*) dengan kondisi sebagai berikut:
 * *input*: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11} ➡️ *output*: "Good Morning!"
 * *input*: {12, 13, 14, 15, 16, 17} ➡️ *output*: "Good Afternoon!"
