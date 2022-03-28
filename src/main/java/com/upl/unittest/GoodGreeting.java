@@ -11,12 +11,20 @@ public class GoodGreeting {
 		this.time = time;
 	}
 	
+	/* Morning: 0-11
+	 * Afternoon: 12-17
+	 * Evening: 18-22
+	 * Night: 23*/
 	public String sayHello() {
 		Calendar current = time.getTime();
 		if (current.get(Calendar.HOUR_OF_DAY) < 12) {
 			return "Good Morning!";
-		} else {
+		} else if (current.get(Calendar.HOUR_OF_DAY) < 18) {
 			return "Good Afternoon!";
+		} else if (current.get(Calendar.HOUR_OF_DAY) < 23) {
+			return "Good Evening!";
+		} else { 
+			return "Good Night!";
 		}
 	}
 }
